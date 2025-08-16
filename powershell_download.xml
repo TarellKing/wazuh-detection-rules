@@ -1,0 +1,12 @@
+<group name="powershell,">
+  <rule id="100201" level="12">
+    <if_sid>18107</if_sid>
+    <field name="win.eventdata.Image">.*\\powershell\.exe</field>
+    <field name="win.eventdata.CommandLine">.*(Invoke-WebRequest|wget|bitsadmin).* </field>
+    <description>Suspicious PowerShell file download detected</description>
+    <mitre>
+      <id>T1059.001</id> <!-- PowerShell -->
+      <id>T1105</id>     <!-- Ingress Tool Transfer -->
+    </mitre>
+  </rule>
+</group>
